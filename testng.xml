@@ -3,7 +3,15 @@
 
 <suite name="EcommerceAutomationSuite" parallel="tests" thread-count="3">
 
-    <test name="LoginTests">
+    <test name="LoginTests-Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="LoginTests-Firefox">
+        <parameter name="browser" value="firefox"/>
         <classes>
             <class name="tests.LoginTest"/>
         </classes>
