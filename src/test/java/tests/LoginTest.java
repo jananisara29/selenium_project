@@ -31,7 +31,7 @@ public class LoginTest {
         loginPage = new LoginPage(driver);
     }
 
-    @Test
+    @Test(retryAnalyzer = utils.RetryAnalyzer.class)
     public void validLogin() {
         loginPage.enterUsername("standard_user");
         loginPage.enterPassword("secret_sauce");
@@ -41,7 +41,7 @@ public class LoginTest {
 //        driver.findElement(By.id("login-button")).click();
         Assert.assertTrue(driver.getCurrentUrl().contains("inventory"));
     }
-    @Test
+    @Test(retryAnalyzer = utils.RetryAnalyzer.class)
     public void invalidLogin() {
         loginPage.enterUsername("standard_usr");
         loginPage.enterPassword("secret_saue");
@@ -55,7 +55,7 @@ public class LoginTest {
         Assert.assertTrue(visible);
     }
 
-    @Test
+    @Test(retryAnalyzer = utils.RetryAnalyzer.class)
     public void emptyLogin() {
          loginPage.clickLogin();
         boolean visible = loginPage.isErrorDisplayed();
