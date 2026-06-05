@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="EcommerceAutomationSuite">
+<suite name="EcommerceAutomationSuite" parallel="tests" thread-count="3">
+
     <test name="LoginTests">
         <classes>
             <class name="tests.LoginTest"/>
         </classes>
     </test>
+
+    <test name="InventoryTests">
+        <classes>
+            <class name="tests.InventoryTest"/>
+        </classes>
+    </test>
+
+    <test name="ApiTests">
+        <classes>
+            <class name="tests.ApiTest"/>
+        </classes>
+    </test>
+
 </suite>
